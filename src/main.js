@@ -13,7 +13,19 @@ import './styles/styles.scss'
 // Placeholder text
 import Lorem from './stateless/lorem-ipsum-view'
 
+// Investment planner
+import { Parameters, Projections } from './state/investment'
+
 class App extends React.Component {
+
+	// Constructor setting default state
+	constructor ( props ) {
+		super ( props )
+		// Set the state objects
+		this.state = {
+			show: 'welcome'
+		}
+	}
 
 	// Render the main application element
 	render( ) {
@@ -30,7 +42,7 @@ class App extends React.Component {
 					/>
 				</header>
 				<Main>
-					<Section content = { <Lorem /> } />
+					<Section content = { <Parameters /> } />
 				</Main>
 				<Footer
 					owner = "Mentor Palokaj"

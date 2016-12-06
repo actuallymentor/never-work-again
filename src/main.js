@@ -23,9 +23,9 @@ class App extends React.Component {
 					<Panel id= "menu" />
 					<Header
 						id 		 = "header"
-						title 	 = "Home"
-						subtitle = "Welcome stranger"
-						name	 = "Identity"
+						title 	 = "Never Work Again"
+						subtitle = "An investment planning tool"
+						name	 = "Never Work Again"
 						logo	 = ""
 					/>
 				</header>

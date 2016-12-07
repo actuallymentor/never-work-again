@@ -1,4 +1,4 @@
-# React Frontend Boilerplate
+# Never work again
 
 [![npm version](https://badge.fury.io/js/generator-react-frontend-boilerplate.svg)](https://badge.fury.io/js/generator-react-frontend-boilerplate) [![Build Status](https://travis-ci.org/actuallymentor/react-frontend-boilerplate.svg?branch=master)](https://travis-ci.org/actuallymentor/react-frontend-boilerplate)
 
@@ -7,115 +7,14 @@
 <img height="50px" alt="browsersync" src="http://i.imgur.com/L5peje9.png" />
 <img height="50px" alt="mocha" src="http://i.imgur.com/yo9d9Qe.png" />
 
-There is a full stack (node, passport etc) version of this boilerplate available [here]( https://github.com/actuallymentor/react-node-boilerplate )
+I was thinging about retirement when I realised I had never calculated how much I needed to invest a month to reach a certain monthly income. This app goes exactly that:
 
-This is a little react project boilerplate for frontend-only projects. I made this so I can quickly made mini projects when bored.
-
-| Component | Module |
-| --------- | ------ |
-| View engine | React |
-| Source JS | ES6 |
-| Source Styles | SASS |
-| Source compilation | Webpack with Babel |
-| Dev server | Browsersync |
-| Testing framework | Mocha with Enzyme |
+1. You give it how much income you want when you retire
+2. You tell it how long from now you want to retire
+3. It shows you three scenarion which can be used to plan your retirement investments
 
 ## Live Demo
 
-[Link to live demo on Github Pages]( https://actuallymentor.github.io/react-frontend-boilerplate/ )
+[Link to live demo on Github Pages]( https://actuallymentor.github.io/never-work-again// )
 
 <a href="https://actuallymentor.github.io/react-frontend-boilerplate/"><img style="max-width: 100%;" src="http://i.imgur.com/xNMHVx5.png" /></a>
-
-## Getting started
-
-Configuration options I suggest you look at:
-
-| Option | Location |
-| ------ | -------- |
-| Google Analytics | Add your  tracking ID in the index.html |
-| Opengraph, Twitter card metadata | In the head of the index.html |
-| Google Schema Metadata | In the ld+json section of the index.html |
-| Site title and logo | Props of <Header /> in main.js |
-| Site copyright owner | Props of <Footer /> in main.js |
-| Set additional menu links | state.menuLinks in state/head.js |
-| Remove Lorem paragraph | Props of <Section /> in main.js |
-
-
-### Through the built in generator
-
-Make sure to have this package installed globally:
-
-```shell
-npm install -g generator-react-frontend-boilerplate
-```
-
-You can then inside any folder generate a boilerplate:
-
-```shell
-generate-react-frontend # generate scaffold
-grf                     # shorthand for same command
-```
-
-Which will generate the followng scaffold:
-
-```shell
-├── LICENSE.md
-├── README.md
-├── package.json
-├── .gitignore
-├── .travis.yml
-├── .babelrc
-├── public
-│   └── index.html
-├── src
-│   ├── main.js
-│   ├── state
-│   │   ├── body.js
-│   │   └── head.js
-│   ├── stateless
-│   │   ├── body-views.js
-│   │   ├── footer-views.js
-│   │   ├── head-views.js
-│   │   └── lorem-ipsum-view.js
-│   └── styles
-│       ├── hamburgers
-│       │   ├── LICENSE
-│       │   └── hamburgericon.scss
-│       └── styles.scss
-└── webpack.config.js
-```
-
-### Through git
-
-Git clone this repository and npm install.
-
-``` shell
-git clone https://github.com/actuallymentor/react-frontend-boilerplate my-app
-cd my-app
-npm install
-```
-
-**Compiling the frontend**
-
-The frontend source in frontend/src is compiled using webpack. Make sure you have it globally installed:
-
-```shell
-npm install -g webpack
-```
-
-You can then run webpack either once:
-
-```shell
-webpack --progress -d # for development mode, no minification etc
-webpack --progress -p # for production code
-
-```
-
-Or as a watching service that rebuilds when the frontend is edited
-
-```shell
-webpack --progress -d --watch # for development mode, no minification etc
-webpack --progress -p --watch # for production code
-```
-
-Note that webpack with --watch will trigger browsersync, this does not mean your backend is running. Only that your frontend is statically served.

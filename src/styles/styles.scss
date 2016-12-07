@@ -42,6 +42,12 @@ $laptop: 1024px;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
+/* Helpers */
+.hide {
+	display: none;
+	opacity: 0;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
@@ -341,5 +347,45 @@ footer {
 		text-align: center;
 		font-size: 0.8em;
 		opacity: 0.5;
+	}
+}
+
+// Investment app specific
+.container {
+	h2 {
+		margin-top: 40px;
+	}
+	table {
+		width: 100%;
+		thead {
+			text-align: left;
+			background-color: #ccc;
+		}
+		td, th {
+			white-space: nowrap;
+			padding: 5px;
+		}
+	}
+	.option {
+		font-style: italic;
+		opacity: 0.8;
+		cursor: pointer;
+		margin-top: 10px;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+#aboutuser, #assumptions {
+	input {
+		font-style: italic;
+		margin: 0 25px;
+		padding-left: 10px;
+		border: none;
+		border-bottom: 1px solid grey;
+		width: 50px;
+		text-align: center;
+		vertical-align: 2px;
+		font-size: 15px;
 	}
 }

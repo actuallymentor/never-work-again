@@ -14,7 +14,7 @@ import './styles/styles.scss'
 import Lorem from './stateless/lorem-ipsum-view'
 
 // Investment planner
-import { Parameters, Projections } from './state/investment'
+import Investment from './state/investment'
 
 class App extends React.Component {
 
@@ -42,7 +42,7 @@ class App extends React.Component {
 					/>
 				</header>
 				<Main>
-					<Section content = { <Parameters /> } />
+					<Section content = { <Investment /> } />
 				</Main>
 				<Footer
 					owner = "Mentor Palokaj"

@@ -1,6 +1,4 @@
-# Never work again
-
-[![Build Status](https://travis-ci.org/actuallymentor/never-work-again.svg?branch=master)](https://travis-ci.org/actuallymentor/never-work-again)
+# Never work again [![Build Status](https://travis-ci.org/actuallymentor/never-work-again.svg?branch=master)](https://travis-ci.org/actuallymentor/never-work-again)
 
 <img height="50px" alt="react" src="http://i.imgur.com/D19TgT8.png" />
 <img height="50px" alt="webpack" src="http://i.imgur.com/ZtANAeL.png" />

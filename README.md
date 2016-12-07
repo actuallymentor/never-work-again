@@ -1,6 +1,6 @@
 # Never work again
 
-[![Build Status](https://travis-ci.org/actuallymentor/react-frontend-boilerplate.svg?branch=master)](https://travis-ci.org/actuallymentor/react-frontend-boilerplate)
+[![Build Status](https://travis-ci.org/actuallymentor/never-work-again.svg?branch=master)](https://travis-ci.org/actuallymentor/never-work-again)
 
 <img height="50px" alt="react" src="http://i.imgur.com/D19TgT8.png" />
 <img height="50px" alt="webpack" src="http://i.imgur.com/ZtANAeL.png" />
@@ -15,6 +15,6 @@ I was thinking about retirement when I realised I had never calculated how much 
 
 ## Live Demo
 
-[Link to live demo on Github Pages]( https://actuallymentor.github.io/never-work-again// )
+[Link to live demo on Github Pages]( https://actuallymentor.github.io/never-work-again/ )
 
-<a href="https://actuallymentor.github.io/react-frontend-boilerplate/"><img style="max-width: 100%;" src="http://i.imgur.com/xNMHVx5.png" /></a>
+<a href="https://actuallymentor.github.io/never-work-again/"><img style="max-width: 100%;" src="http://i.imgur.com/gCrt85g.png" /></a>

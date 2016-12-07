@@ -75,7 +75,7 @@ export const PlanningView = ( { handleChange, interest, desiredIncome, capital, 
 	}
 	return(
 			<div>
-				<h2>Let's plan ahead together.</h2>
+				<h2>Let's plan together.</h2>
 				<p>You want a monthly income of €{ desiredIncome / 12 },- when you retire { timeline } years from now.</p>
 				<p>In order to have €{ desiredIncome / 12 } to spend per month you will need an amount of money that will generate an amount of interest equal to that amount of income.</p>
 				<p>The amounts below reflect how much you need to invest per month to reach your goal.</p>
@@ -85,6 +85,8 @@ export const PlanningView = ( { handleChange, interest, desiredIncome, capital, 
 							<th>Market</th>
 							<th>Returns</th>
 							<th>Monthly investments</th>
+							<th>Total invested</th>
+							<th>End capital</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -92,20 +94,26 @@ export const PlanningView = ( { handleChange, interest, desiredIncome, capital, 
 							<td>Pessimistic</td>
 							<td>{ interest.pessimistic }%</td>
 							<td>{ money( monthlies.pessimistic ) }</td>
+							<td>{ money( monthlies.pessimistic * 12 * timeline ) }</td>
+							<td>{ money( desiredIncome / ( interest.pessimistic / 100 ) ) }</td>
 						</tr>
 						<tr>
 							<td>Reasonable</td>
 							<td>{ interest.historical }%</td>
 							<td>{ money( monthlies.historical ) }</td>
+							<td>{ money( monthlies.historical * 12 * timeline ) }</td>
+							<td>{ money( desiredIncome / ( interest.historical / 100 ) ) }</td>
 						</tr>
 						<tr>
 							<td>Optimistic</td>
 							<td>{ interest.optimistic }%</td>
 							<td>{ money( monthlies.optimistic ) }</td>
+							<td>{ money( monthlies.optimistic * 12 * timeline ) }</td>
+							<td>{ money( desiredIncome / ( interest.optimistic / 100 ) ) }</td>
 						</tr>
 					</tbody>
 				</table>
-				<div className="option" onClick={toggleOptions}>
+				<div className="option depth" onClick={toggleOptions}>
 					{ showOptions ? 'Hide options' : 'Set your own return percentages' }
 				</div>
 				<div className={ showOptions ? '' : 'hide' } >
@@ -140,7 +148,7 @@ export const ExplainReasoningView = (  ) => {
 		<div>
 			<h2>My reasoning for this calculation</h2>
 			<p>
-				Step one is understanding compound interest. Basically this means that the longer invest, the faster you gain money. Basically it's the reason people say "the rich get richer". <a href="https://www.skillcollector.com/manage-finances-investments/#Understand_the_magic_of_compound_interest">Read more about compound interest.</a>
+				Step one is understanding compound interest. Basically this means that the longer invest, the faster you gain money. It's the reason people say "the rich get richer". <a href="https://www.skillcollector.com/manage-finances-investments/#Understand_the_magic_of_compound_interest">Read more about compound interest.</a>
 			</p>
 			<p>
 				The reason I assume 2%, 4% and 8% of stock returns is based on index fund investing (<a href="https://www.skillcollector.com/manage-finances-investments/#Index_funds">read more about index funds</a>). Historically the average return of a big index fund called the S&P 500 is about 10% (<a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html">see this data sheet</a>). This is not yet adjusted for inflation etc, so it may seem a bit high. Predicting future returns is always guessing, I tried to be as reasonable as I could.

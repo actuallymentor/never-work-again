@@ -11,8 +11,8 @@ I was thinking about retirement when I realised I had never calculated how much 
 2. You tell it how long from now you want to retire
 3. It shows you three scenarion which can be used to plan your retirement investments
 
-## Live Demo
+## Try it yourself
 
-[Link to live demo on Github Pages]( https://actuallymentor.github.io/never-work-again/ )
+[Link to live version on Github Pages]( https://actuallymentor.github.io/never-work-again/ )
 
 <a href="https://actuallymentor.github.io/never-work-again/"><img style="max-width: 100%;" src="http://i.imgur.com/gCrt85g.png" /></a>

@@ -8,10 +8,6 @@ const money = ( number ) => {
 	return Number( number ).toLocaleString('en-US', { style: 'currency', currency: 'EUR' })
 }
 
-console.log( money( 22.66666 ) )
-console.log( money( '22.55555' ) )
-
-
 export const ParametersView = ( { handleChange, interest, income, timeline }  ) => {
 	return (
 			<div>

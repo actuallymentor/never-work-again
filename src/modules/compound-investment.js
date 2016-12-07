@@ -1,4 +1,4 @@
-export const compound = ( initial, yearly, roi, term, verbose = true ) => {
+export const compound = ( initial, yearly, roi, term, verbose = false ) => {
 
 	// Set the initial value
 	let result = initial

@@ -61,6 +61,7 @@ export default class Investment extends React.Component {
 		// Show the app result
 		return(
 			<div>
+				<p className="note">If you are just getting started with budgeting & investing <a href="https://www.skillcollector.com/manage-finances-investments/">read this</a>.</p>
 				<ParametersView
 					handleChange  = { this.setInterest }
 					interest 	  = { this.state.interest }

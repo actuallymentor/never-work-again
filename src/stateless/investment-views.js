@@ -8,7 +8,7 @@ const money = ( number ) => {
 	return Number( number ).toLocaleString('en-US', { style: 'currency', currency: 'EUR' })
 }
 
-export const ParametersView = ( { handleChange, interest, income, timeline }  ) => {
+export const ParametersView = ( { handleChange, interest, income, timeline, capital }  ) => {
 	return (
 			<div>
 				<h2>Tell me about you.</h2>
@@ -28,6 +28,14 @@ export const ParametersView = ( { handleChange, interest, income, timeline }  ) 
 						name	 = "income"
 					/>
 					.
+					I currently have
+					<input
+						onChange = { handleChange }
+						value 	 = { capital || 0 }
+						type 	 = "number"
+						name	 = "capital"
+					/>
+					to invest.
 				</p>
 			</div>
 		)
@@ -48,23 +56,23 @@ export const DesiresView = ( { interest, income, timeline } ) => {
 		)
 }
 
-export const PlanningView = ( { handleChange, interest, desiredIncome, capital, timeline, showOptions, toggleOptions } ) => {
+export const PlanningView = ( { handleChange, interest, desiredYearlyIncome, capital, timeline, showOptions, toggleOptions } ) => {
 	let monthlies = {
 		pessimistic: reverseCompound(
 						capital,
-						desiredIncome,
+						desiredYearlyIncome,
 						timeline,
 						interest.pessimistic
 					).toFixed( 2 ),
 		historical: reverseCompound(
 							capital,
-							desiredIncome,
+							desiredYearlyIncome,
 							timeline,
 							interest.historical
 						).toFixed( 2 ),
 		optimistic: reverseCompound(
 							capital,
-							desiredIncome,
+							desiredYearlyIncome,
 							timeline,
 							interest.optimistic
 						).toFixed( 2 )
@@ -72,43 +80,45 @@ export const PlanningView = ( { handleChange, interest, desiredIncome, capital, 
 	return(
 			<div>
 				<h2>Let's plan together.</h2>
-				<p>You want a monthly income of €{ desiredIncome / 12 },- when you retire { timeline } years from now.</p>
-				<p>In order to have €{ desiredIncome / 12 } to spend per month you will need an amount of money that will generate an amount of interest equal to that amount of income.</p>
+				<p>You want a monthly income of €{ desiredYearlyIncome / 12 },- when you retire { timeline } years from now.</p>
+				<p>In order to have €{ desiredYearlyIncome / 12 } to spend per month you will need an amount of money that will generate an amount of interest equal to that amount of income.</p>
 				<p>The amounts below reflect how much you need to invest per month to reach your goal.</p>
-				<table>
-					<thead>
-						<tr>
-							<th>Market</th>
-							<th>Returns</th>
-							<th>Monthly investments</th>
-							<th>Total invested</th>
-							<th>End capital</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Pessimistic</td>
-							<td>{ interest.pessimistic }%</td>
-							<td>{ money( monthlies.pessimistic ) }</td>
-							<td>{ money( monthlies.pessimistic * 12 * timeline ) }</td>
-							<td>{ money( desiredIncome / ( interest.pessimistic / 100 ) ) }</td>
-						</tr>
-						<tr>
-							<td>Reasonable</td>
-							<td>{ interest.historical }%</td>
-							<td>{ money( monthlies.historical ) }</td>
-							<td>{ money( monthlies.historical * 12 * timeline ) }</td>
-							<td>{ money( desiredIncome / ( interest.historical / 100 ) ) }</td>
-						</tr>
-						<tr>
-							<td>Optimistic</td>
-							<td>{ interest.optimistic }%</td>
-							<td>{ money( monthlies.optimistic ) }</td>
-							<td>{ money( monthlies.optimistic * 12 * timeline ) }</td>
-							<td>{ money( desiredIncome / ( interest.optimistic / 100 ) ) }</td>
-						</tr>
-					</tbody>
-				</table>
+				<div className="horiScroll">
+					<table>
+						<thead>
+							<tr>
+								<th>Market</th>
+								<th>Returns</th>
+								<th>Monthly investments</th>
+								<th>Total invested</th>
+								<th>End capital</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Pessimistic</td>
+								<td>{ interest.pessimistic }%</td>
+								<td id='pessimisticMonthly'>{ money( monthlies.pessimistic ) }</td>
+								<td>{ money( monthlies.pessimistic * 12 * timeline ) }</td>
+								<td>{ money( desiredYearlyIncome / ( interest.pessimistic / 100 ) ) }</td>
+							</tr>
+							<tr>
+								<td>Reasonable</td>
+								<td id='realisticMonthly'>{ interest.historical }%</td>
+								<td>{ money( monthlies.historical ) }</td>
+								<td>{ money( monthlies.historical * 12 * timeline ) }</td>
+								<td>{ money( desiredYearlyIncome / ( interest.historical / 100 ) ) }</td>
+							</tr>
+							<tr>
+								<td>Optimistic</td>
+								<td id='optimisticMonthly'>{ interest.optimistic }%</td>
+								<td>{ money( monthlies.optimistic ) }</td>
+								<td>{ money( monthlies.optimistic * 12 * timeline ) }</td>
+								<td>{ money( desiredYearlyIncome / ( interest.optimistic / 100 ) ) }</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 				<div className="option depth" onClick={toggleOptions}>
 					{ showOptions ? 'Hide options' : 'Set your own return percentages' }
 				</div>

@@ -21,12 +21,12 @@ export default class Investment extends React.Component {
 			showOptions: false
 		}
 		// Bind the functions for use in the render
-		this.setInterest = this.setInterest.bind( this )
+		this.setPersona = this.setPersona.bind( this )
 		this.optionsToggle = this.optionsToggle.bind( this )
 	}
 
 	// Set the parameters
-	setInterest( e ) {
+	setPersona( e ) {
 		let newState = { interest: this.state.interest }
 
 		// Change the state interest key based on changed input
@@ -46,8 +46,12 @@ export default class Investment extends React.Component {
 			case 'timeline':
 				newState.timeline = e.target.value
 			break
+			case 'capital':
+				newState.capital = Number( e.target.value )
+			break
 		}
 		this.setState( newState )
+		console.log( this.state )
 	}
 
 	// Show the options bar
@@ -63,18 +67,19 @@ export default class Investment extends React.Component {
 			<div>
 				<p className="note">If you are just getting started with budgeting & investing <a href="https://www.skillcollector.com/manage-finances-investments/">read this</a>.</p>
 				<ParametersView
-					handleChange  = { this.setInterest }
+					handleChange  = { this.setPersona }
 					interest 	  = { this.state.interest }
 					income		  = { this.state.income }
-					timeline 	  = { this.state.timeline } />
-				<PlanningView
-					handleChange  = { this.setInterest }
-					interest 	  = { this.state.interest }
-					desiredIncome = { this.state.income * 12 }
-					capital 	  = { this.state.capital }
 					timeline 	  = { this.state.timeline }
-					showOptions   = { this.state.showOptions }
-					toggleOptions = { this.optionsToggle } />
+					capital 	  = { this.state.capital } />
+				<PlanningView
+					handleChange  		= { this.setPersona }
+					interest 	  		= { this.state.interest }
+					desiredYearlyIncome = { this.state.income * 12 }
+					capital 	  		= { this.state.capital }
+					timeline 	  		= { this.state.timeline }
+					showOptions   		= { this.state.showOptions }
+					toggleOptions 		= { this.optionsToggle } />
 				<DesiresView
 					interest 	 = { this.state.interest }
 					income		 = { this.state.income }

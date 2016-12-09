@@ -104,15 +104,15 @@ export const PlanningView = ( { handleChange, interest, desiredYearlyIncome, cap
 							</tr>
 							<tr>
 								<td>Reasonable</td>
-								<td id='realisticMonthly'>{ interest.historical }%</td>
-								<td>{ money( monthlies.historical ) }</td>
+								<td>{ interest.historical }%</td>
+								<td id='realisticMonthly'>{ money( monthlies.historical ) }</td>
 								<td>{ money( monthlies.historical * 12 * timeline ) }</td>
 								<td>{ money( desiredYearlyIncome / ( interest.historical / 100 ) ) }</td>
 							</tr>
 							<tr>
 								<td>Optimistic</td>
-								<td id='optimisticMonthly'>{ interest.optimistic }%</td>
-								<td>{ money( monthlies.optimistic ) }</td>
+								<td>{ interest.optimistic }%</td>
+								<td id='optimisticMonthly'>{ money( monthlies.optimistic ) }</td>
 								<td>{ money( monthlies.optimistic * 12 * timeline ) }</td>
 								<td>{ money( desiredYearlyIncome / ( interest.optimistic / 100 ) ) }</td>
 							</tr>

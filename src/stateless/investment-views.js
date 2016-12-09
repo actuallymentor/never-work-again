@@ -35,7 +35,7 @@ export const ParametersView = ( { handleChange, interest, income, timeline, capi
 						type 	 = "number"
 						name	 = "capital"
 					/>
-					to invest.
+					available to invest (or already invested).
 				</p>
 			</div>
 		)

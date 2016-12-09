@@ -167,7 +167,8 @@ export const ExplainReasoningView = (  ) => {
 			</ul>
 			<h2>Disclaimer</h2>
 			<p>This is a tool made by an investing enthusiast for personal use. This is not financial advice. Investing is risky, talk to a financial advisor and do your own research before making investment decisions.</p>
-			<p>This tool comes with no warranty or guarantees whatsowever. There is a legitimate chance I made a mistake or miscalculation that makes this tool useless. I suggest checking your math before making investment decisions.</p>
+			<p>This tool comes with no warranty or guarantees whatsoever. There is a legitimate chance I made a mistake or miscalculation that makes this tool useless. I suggest checking your math before making investment decisions.</p>
+			<p><a href="https://github.com/actuallymentor/never-work-again/blob/master/LICENSE.md">Read the license</a></p>
 		</div>
 	)
 }

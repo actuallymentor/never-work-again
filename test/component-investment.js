@@ -98,6 +98,8 @@ describe( '<Investment /> calculation correctness', f =>{
 		let optimisticInput = investment.find( '#optimisticMonthly' )
 
 		expect( pessimisticInput.text( ) ).to.equal( query.correct.pessimistic )
+		expect( reasonableInput.text( ) ).to.equal( query.correct.historical )
+		expect( optimisticInput.text( ) ).to.equal( query.correct.optimistic )
 
 		done( )
 

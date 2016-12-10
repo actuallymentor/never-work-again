@@ -256,35 +256,6 @@ p {
                 }
             }
         }
-        #accountform {
-        	display: flex;
-        	flex-direction: column;
-        	padding: 0 2%;
-        	@include min-size ( $mobile) {
-        		padding: 0 2%;
-        	}
-        	@include min-size ( $tablet) {
-        		padding: 0 20%;
-        	}
-        	@include min-size ( $laptop) {
-        		padding: 0 40%;
-        	}
-        	input,
-        	button {
-        		margin: 10px 0;
-        		padding: 10px 5px;
-        		border: none;
-        		text-align: center;
-        		color: $accent-color;
-        		background-color: white;
-        		font-weight: bold;
-        		font-size: 1rem;
-        		text-transform: capitalize;
-        		&:hover {
-        			@include hover-element( $hover-speed)
-        		}
-        	}
-        }
     }
     #menu-btn {
     	position: absolute;
@@ -404,15 +375,11 @@ footer {
 	input {
 		font-style: italic;
 		margin: 0 10px;
-		padding: 0 2px;
+		padding: 0 5px;
 		border: none;
 		border-bottom: 1px solid grey;
-		width: 60px;
 		text-align: center;
 		vertical-align: 2px;
 		font-size: 15px;
-		&:first-child {
-			width: 35px;
-		}
 	}
 }

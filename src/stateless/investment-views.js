@@ -19,6 +19,8 @@ export const ParametersView = ( { handleChange, interest, income, timeline, capi
 						value 	 = { timeline || '' }
 						type 	 = "number"
 						name	 = "timeline"
+						// Dynamically set input initially
+						style 	 = {{ width:  ( ( timeline.toString( ).length * 8 ) + 15 ) + 'px' }}
 					/>
 					years I would like a monthly income of
 					<input
@@ -26,6 +28,8 @@ export const ParametersView = ( { handleChange, interest, income, timeline, capi
 						value 	 = { income || '' }
 						type 	 = "number"
 						name	 = "income"
+						// Dynamically set input initially
+						style 	 = {{ width:  ( ( income.toString( ).length * 8 ) + 15 ) + 'px' }}
 					/>
 					.
 					I currently have
@@ -34,6 +38,8 @@ export const ParametersView = ( { handleChange, interest, income, timeline, capi
 						value 	 = { capital || 0 }
 						type 	 = "number"
 						name	 = "capital"
+						// Dynamically set input initially
+						style 	 = {{ width:  ( ( capital.toString( ).length * 8 ) + 15 ) + 'px' }}
 					/>
 					available to invest, or already invested.
 				</p>

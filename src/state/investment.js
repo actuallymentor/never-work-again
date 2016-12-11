@@ -75,7 +75,6 @@ export default class Investment extends React.Component {
 			break
 		}
 		this.setState( newState )
-		console.log( this.state )
 	}
 
 	// Show the options bar

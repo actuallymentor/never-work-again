@@ -116,7 +116,8 @@
     "url": "git+https://github.com/actuallymentor/react-frontend-boilerplate.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress -p",
+    "build": "rm -rf ./docs/*; NODE_ENV=production webpack --progress -p; cp -r ./public/* ./docs/;",
+    "deploy": "git add *; git commit -am 'Deploy new version'; git push;",
     "start": "NODE_ENV=development webpack --progress -d --watch",
     "test": "mocha --compilers js:babel-core/register"
   },

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import investment views
-import { ParametersView, DesiresView, PlanningView, ExplainReasoningView } from '../stateless/investment-views'
+import { ParametersView, DesiresView, PlanningView, ExplainReasoningView, CompoundView } from '../stateless/investment-views'
 
 // Setting the parameters of the market
 export default class Investment extends React.Component {
@@ -18,7 +18,13 @@ export default class Investment extends React.Component {
 			income: 1150,
 			capital: 0,
 			timeline: 40,
-			showOptions: false
+			showOptions: false,
+			compound: {
+				capital: 1000,
+				monthly: 500,
+				timeline: 40,
+				roi: 4
+			}
 		}
 		// Bind the functions for use in the render
 		this.setPersona = this.setPersona.bind( this )
@@ -27,7 +33,10 @@ export default class Investment extends React.Component {
 
 	// Set the parameters
 	setPersona( e ) {
-		let newState = { interest: this.state.interest }
+		let newState = { 
+			interest: this.state.interest,
+			compound: this.state.compound
+		}
 
 		// Change the state interest key based on changed input
 		switch( e.target.name ) {
@@ -52,9 +61,20 @@ export default class Investment extends React.Component {
 				newState.capital = Number( e.target.value )
 				e.target.style = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
 			break
+			case 'capitalCompound':
+				newState.compound.capital = e.target.value
+			break
+			case 'monthlyCompound':
+				newState.compound.monthly = e.target.value
+			break
+			case 'timelineCompound':
+				newState.compound.timeline = e.target.value
+			break
+			case 'roiCompound':
+				newState.compound.roi = e.target.value
+			break
 		}
 		this.setState( newState )
-		console.log( this.state )
 	}
 
 	// Show the options bar
@@ -87,6 +107,13 @@ export default class Investment extends React.Component {
 					interest 	 = { this.state.interest }
 					income		 = { this.state.income }
 					timeline 	 = { this.state.timeline } />
+				<CompoundView
+					handleChange = { this.setPersona }
+					capital  	 = { this.state.compound.capital }
+					monthly  	 = { this.state.compound.monthly }
+					timeline 	 = { this.state.compound.timeline }
+					roi 	 	 = { this.state.compound.roi }
+					/>
 				<ExplainReasoningView />
 			</div>
 		)

@@ -197,3 +197,55 @@ describe( '<Investment /> calculation correctness', f =>{
 	} )
 
 } )
+
+describe( '<CompoundView /> calculates correctly', f => {
+
+	// Mount the conponent for test block
+	const investment = mount( <Investment /> )
+
+	// Known query with an outcome
+	let query = {
+		compound: {
+			capital: 0,
+			monthly: 353.5,
+			roi: 4,
+			timeline: 40
+		},
+		correct: '419,222.17'
+	}
+
+	it( 'Is correct with initial none', done => {
+
+		investment.setState( {
+			compound: query.compound
+		} )
+
+		// Do a test calculation based on a known query
+		let result = investment.find( '#compoundResult' ).text( )
+		expect( result ).to.contain( query.correct )
+		done( )
+
+	} )
+
+	it( 'Is correct with initial capital', done => {
+
+		// Set known correct parameters
+		query.compound.capital = 2111
+		query.compound.monthly = 286.166666666666667
+		query.compound.roi = 4
+		query.compound.timeline = 40
+		query.correct = '349,505.28'
+
+		investment.setState( {
+			compound: query.compound
+		} )
+
+		// Do a test calculation based on a known query
+		let result = investment.find( '#compoundResult' ).text( )
+		expect( result ).to.contain( query.correct )
+		done( )
+
+	} )
+
+
+} )

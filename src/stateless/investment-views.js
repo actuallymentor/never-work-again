@@ -178,3 +178,67 @@ export const ExplainReasoningView = (  ) => {
 		</div>
 	)
 }
+
+export const CompoundView = ( { handleChange, capital, monthly, timeline, roi }  ) => {
+	let compoundResult = {
+		capital: compound( capital, monthly * 12, roi, timeline ),
+		invested: ( monthly * 12 * timeline ) + capital
+	}
+	return (
+			<div>
+				<h2>Compound interest calculator</h2>
+				<p>For reference purposes you can project your capital based on a compound interest calculation.</p>
+				<div className="horiScroll">
+					<table>
+						<thead>
+							<tr>
+								<th>Current capital</th>
+								<th>Monthly investment</th>
+								<th>Years to grow</th>
+								<th>Return %</th>
+							</tr>
+						</thead>
+						<tbody id="compoundAssumptions">
+							<tr>
+								<td>
+									<input
+										onChange = { handleChange }
+										value 	 = { capital || '' }
+										type 	 = "number"
+										name	 = "capitalCompound"
+									/>
+								</td>
+								<td>
+									<input
+										onChange = { handleChange }
+										value 	 = { monthly || '' }
+										type 	 = "number"
+										name	 = "monthlyCompound"
+									/>
+								</td>
+								<td>
+									<input
+										onChange = { handleChange }
+										value 	 = { timeline || '' }
+										type 	 = "number"
+										name	 = "timelineCompound"
+									/>
+								</td>
+								<td>
+									<input
+										onChange = { handleChange }
+										value 	 = { roi || '' }
+										type 	 = "number"
+										name	 = "roiCompound"
+									/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p id="compoundResult">
+					This will result in { money( compoundResult.capital ) } based on { money( compoundResult.invested ) } total investment.
+				</p>
+			</div>
+		)
+}

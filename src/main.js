@@ -36,7 +36,7 @@ class App extends React.Component {
 					<Header
 						id 		 = "header"
 						title 	 = "Never Work Again"
-						subtitle = "An investment planning tool"
+						subtitle = "Plan retirement based on compound interest investments"
 						name	 = "Never Work Again"
 						logo	 = ""
 					/>

@@ -62,7 +62,7 @@ export default class Investment extends React.Component {
 				e.target.style = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
 			break
 			case 'capitalCompound':
-				newState.compound.capital = e.target.value
+				newState.compound.capital = Number( e.target.value )
 			break
 			case 'monthlyCompound':
 				newState.compound.monthly = e.target.value
@@ -75,6 +75,7 @@ export default class Investment extends React.Component {
 			break
 		}
 		this.setState( newState )
+		console.log( this.state )
 	}
 
 	// Show the options bar

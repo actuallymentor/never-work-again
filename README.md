@@ -1,4 +1,4 @@
-# Never work again [![Build Status](https://travis-ci.org/actuallymentor/never-work-again.svg?branch=master)](https://travis-ci.org/actuallymentor/never-work-again)
+# Never work again [![Build Status](https://travis-ci.org/actuallymentor/never-work-again.svg?branch=master)](https://travis-ci.org/actuallymentor/never-work-again) [![NSP Status](https://nodesecurity.io/orgs/open-source-projects/projects/ef751048-5129-4bf4-acf0-ba736cc1a1be/badge)](https://nodesecurity.io/orgs/open-source-projects/projects/ef751048-5129-4bf4-acf0-ba736cc1a1be)
 
 <img height="50px" alt="react" src="http://i.imgur.com/D19TgT8.png" />
 <img height="50px" alt="webpack" src="http://i.imgur.com/ZtANAeL.png" />

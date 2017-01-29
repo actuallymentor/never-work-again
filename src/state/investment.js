@@ -51,15 +51,15 @@ export default class Investment extends React.Component {
 			break
 			case 'income':
 				newState.income = e.target.value
-				e.target.style = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
+				e.target.styles = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
 			break
 			case 'timeline':
 				newState.timeline = e.target.value
-				e.target.style = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
+				e.target.styles = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
 			break
 			case 'capital':
 				newState.capital = Number( e.target.value )
-				e.target.style = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
+				e.target.styles = 'width: ' + ( ( e.target.value.length * 8 ) + 15 ) + 'px;'
 			break
 			case 'capitalCompound':
 				newState.compound.capital = Number( e.target.value )
